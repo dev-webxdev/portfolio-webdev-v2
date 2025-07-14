@@ -23,4 +23,4 @@ Portfolio web personnel, mettant en avant mes projets, compétences et expérien
 [dev-webxdev](https://github.com/dev-webxdev)
 
 ## Licence
-Ce projet est open-source, sous licence MIT.
+Ce projet n'est pas open-source. Tous droits réservés.
