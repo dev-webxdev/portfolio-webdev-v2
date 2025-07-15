@@ -22,13 +22,17 @@ body {
 
 .site-header .logo img {
     width: 180px;
-    margin-left: 32px;   /* Ajustement de la marge gauche pour l'image du logo */
+    margin-left: 32px;
+}
+
+.site-header .logo-mobile {
+    display: none;
 }
 
 .site-header_right {
     display: flex;
     align-items: center;
-    gap: 20px; /* ajoute un gap pour espacer nav, switch et bouton */
+    gap: 20px;
 }
 
 .site-header_right .nav ul {
@@ -59,22 +63,53 @@ body {
 }
 
 @media (max-width: 800px) {
-    /* Cacher tous les liens sauf le dernier (ou à adapter) */
     .site-header_right .nav ul li:not(:last-child) {
         display: none;
     }
-    .site-header_right .nav ul {
-        gap: 15px;
+    .site-header .logo-desktop {
+        display: none;
     }
-    #burger-btn {
+    .site-header .logo-mobile {
         display: block;
+        width: 50px!important;
     }
-    /* Quand menu est actif, afficher les items */
-    .site-header_right .nav.active ul li {
-        display: block;
-        margin: 8px 0;
-    }
-    .site-header_right {
-        gap: 0;
-    }
+
+.site-header_right .nav.active {
+    background-color: var(--color-opacity);
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    width: 100%;
+    backdrop-filter: blur(8px);
+}
+
+.site-header_right .nav.active ~ #burger-btn {
+    display: block;
+    z-index: 3;
+    border: none;
+}
+.site-header_right .nav.active ~ .theme-switcher {
+    z-index: -1;
+}
+
+.site-header_right .nav ul {
+    gap: 15px;
+    flex-direction: column;
+    font-size: 25px;
+}
+#burger-btn {
+    display: block;
+}
+.site-header_right .nav.active ul li {
+    display: block;
+    margin: 8px 0;
+}
+.site-header_right {
+    gap: 0;
+}
 }
