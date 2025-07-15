@@ -1,35 +1,21 @@
+const themeToggle = document.getElementById('theme-toggle');
+const logos = { logo: 'webxdev', logo2: 'logo' };
+
 function setTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-
-  document.getElementById('logo').src =
-    theme === 'dark'
-      ? 'assets/images/dark/webxdev.svg'
-      : 'assets/images/light/webxdev.svg';
-
-  document.getElementById('logo2').src =
-    theme === 'dark'
-      ? 'assets/images/dark/logo.svg'
-      : 'assets/images/light/logo.svg';
-
-      
-  const toggle = document.getElementById('theme-toggle');
-  toggle.checked = theme === 'dark';
-  toggle.setAttribute('aria-checked', toggle.checked);
+  document.documentElement.dataset.theme = theme;
+  Object.entries(logos).forEach(([id, name]) => {
+    document.getElementById(id).src = `assets/images/${theme}/${name}.svg`;
+  });
+  themeToggle.checked = (theme === 'dark');
+  themeToggle.setAttribute('aria-checked', themeToggle.checked);
 }
 
+setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-function applyPreferredTheme() {
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  setTheme(prefersDark ? 'dark' : 'light');
-}
+window.matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', e => setTheme(e.matches ? 'dark' : 'light'));
 
-applyPreferredTheme();
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-  setTheme(e.matches ? 'dark' : 'light');
-});
-
-document.getElementById('theme-toggle').addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.dataset.theme;
   setTheme(current === 'dark' ? 'light' : 'dark');
 });
