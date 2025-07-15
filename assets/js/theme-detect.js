@@ -6,6 +6,12 @@ function setTheme(theme) {
       ? 'assets/images/dark/webxdev.svg'
       : 'assets/images/light/webxdev.svg';
 
+  document.getElementById('logo2').src =
+    theme === 'dark'
+      ? 'assets/images/dark/logo.svg'
+      : 'assets/images/light/logo.svg';
+
+      
   const toggle = document.getElementById('theme-toggle');
   toggle.checked = theme === 'dark';
   toggle.setAttribute('aria-checked', toggle.checked);
