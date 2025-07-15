@@ -1,1 +1,40 @@
-@import url('variables.css');
+@import url('reset.css');
+@import url('theme.css');
+@import url('switcher-theme.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap');
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--background-img), var(--color-bg);
+}
+
+.site-header {
+width: 100%;
+height: 80px;
+background-color: var(--color-bg);
+border-bottom: 1px solid var(--color-border);
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-inline: 2rem;
+}
+
+.site-header a.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.site-header .nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    color: var(--color-title);
+    font-weight: 600;
+}
+
+.site-header .nav ul li button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

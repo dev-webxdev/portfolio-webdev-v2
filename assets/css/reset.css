@@ -1,0 +1,45 @@
+/* Reset CSS moderne pour une base propre et cohérente */
+
+/* Box sizing border-box pour tout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Supprime les marges et paddings par défaut */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Supprime la décoration des listes */
+ul, ol {
+  list-style: none;
+}
+
+/* Supprime la décoration des liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Images responsive */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Héritage de police pour les inputs et boutons */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Hauteur minimale du body */
+html, body {
+  height: 100%;
+}
+
+/* Lissage des polices */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

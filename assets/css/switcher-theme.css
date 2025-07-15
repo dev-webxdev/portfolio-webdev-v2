@@ -1,0 +1,73 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 23px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+    transition: background-color 0.4s, border-color 0.4s;
+  }
+  
+  .slider::before {
+    content: "\f185"; /* soleil par défaut */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    left: -1px;
+    top: 1px;
+    bottom: 1px;
+    margin: auto 0;
+    border-radius: 50%;
+    background-color: var(--color-sun);
+    border: 1px solid var(--color-border);
+    color: var(--color-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(32, 32, 32, 0.24);
+    transition: transform 0.4s, content 0.4s, background-color 0.4s, color 0.4s;
+    transform: translateX(26px); /* position à droite par défaut (toggle ON) */
+  }
+  
+  /* Toggle OFF : boule à gauche avec icône lune */
+  .switch input:not(:checked) + .slider::before {
+    content: "\f185"; /* lune */
+    background-color: #fff;
+    color: var(--color-sun);
+    transform: translateX(0);
+  }
+  
+  /* Thème dark : inverser couleurs de fond slider et boule */
+  html[data-theme="dark"] .slider {
+    background-color: var(--color-bg-dark, #0f1224);
+    border-color: var(--color-border);
+  }
+  
+  html[data-theme="dark"] .switch input:not(:checked) + .slider::before {
+    background-color: var(--color-moon);
+    color: #fff;
+  }
+  
+  html[data-theme="dark"] .switch input:checked + .slider::before {
+    background-color: var(--color-moon);
+    color: #fff;
+    content: "\f186"; /* soleil */
+  }
+  
+  /* Thème light : couleurs par défaut, rien à changer */
+  
