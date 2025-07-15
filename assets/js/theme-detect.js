@@ -1,15 +1,16 @@
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
+
   document.getElementById('logo').src =
     theme === 'dark'
-      ? 'assets/images/dark/logo.svg'
-      : 'assets/images/light/logo.svg';
+      ? 'assets/images/dark/webxdev.svg'
+      : 'assets/images/light/webxdev.svg';
 
-  // Synchroniser l'état du checkbox
   const toggle = document.getElementById('theme-toggle');
   toggle.checked = theme === 'dark';
   toggle.setAttribute('aria-checked', toggle.checked);
 }
+
 
 function applyPreferredTheme() {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
