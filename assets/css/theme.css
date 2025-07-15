@@ -8,6 +8,7 @@
   --color-title: #D5DCFC;
   --color-text: #8491c7;
   --color-bg: #171930;
+  --color-bg-opacity: rgba(23, 25, 48, 0.2);
   --color-border: #2a2e5e;
   --card-box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   --background-img: url('../images/dark/background-dark.svg');
@@ -18,6 +19,7 @@
   --color-title: #292B35;
   --color-text: #b4b9cc;
   --color-bg: #ffffff;
+  --color-bg-opacity: rgba(0, 0, 0, 0.2);
   --color-border: #DDDCDA;
   --card-box-shadow: 0 2px 20px rgb(216, 225, 232);
   --background-img: url('../images/light/background-light.svg');
