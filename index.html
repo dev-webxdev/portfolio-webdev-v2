@@ -12,27 +12,33 @@
 </head>
 <body>
   <header class="site-header">
-    <a href="index.html" class="logo" aria-label="Accueil WebXdev">
-      <img id="logo" src="assets/images/dark/logo.svg" alt="Logo WebXdev" />
-    </a>
-    <nav class="nav" role="navigation">
-      <ul>
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="projects.html">Projets</a></li>
-        <li><a href="skills.html">Compétences</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li>
-            <div class="theme-switcher">
-                <label class="switch" aria-label="Changer le thème (sombre/clair)">
-                  <input type="checkbox" id="theme-toggle" />
-                  <span class="slider round"></span>
-                </label>
-              </div>
-        </li>
-      </ul>
-    </nav>
+    <div class="logo" aria-label="Accueil WebXdev">
+      <img id="logo" src="assets/images/dark/webxdev.svg" alt="Logo WebXdev" />
+    </div>
+    <div class="site-header_right">
+      <nav class="nav" role="navigation" id="nav-menu">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+          </li>
+        </ul>
+      </nav>
+      <div class="theme-switcher">
+        <label class="switch" aria-label="Changer le thème (sombre/clair)">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <button id="burger-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
   </header>
-
+  
+  
   <script src="assets/js/theme-detect.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
