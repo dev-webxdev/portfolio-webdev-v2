@@ -1,5 +1,5 @@
 const themeToggle = document.getElementById('theme-toggle');
-const logos = { logo: 'webxdev', logo2: 'logo' };
+const logos = { logo: 'webxdev', logo2: 'logo', logoIntroduction: 'webxdev', };
 
 function setTheme(theme) {
   document.documentElement.dataset.theme = theme;
